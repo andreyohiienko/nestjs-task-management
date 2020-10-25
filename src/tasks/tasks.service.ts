@@ -56,6 +56,7 @@ export class TasksService {
   }
 
   deleteTask(id: string): string {
+    this.getTaskById(id) // checks existing of task
     this.tasks = this.tasks.filter((task) => task.id !== id)
     return id
   }
