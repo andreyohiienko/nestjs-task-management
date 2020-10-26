@@ -48,3 +48,8 @@ $ npm run test:cov
 - class-transformer
 - PostgreSQL
 - TypeORM
+
+### Nest Commands
+- nest g module \<name\>
+- nest g controller \<name\> --no-spec
+- nest g service \<name\> --no-spec
