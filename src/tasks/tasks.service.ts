@@ -12,6 +12,8 @@ export class TasksService {
     @InjectRepository(TaskRepository) private TaskRepository: TaskRepository,
   ) {}
 
+  getTasks(filterDto: GetTasksFilterDto) {}
+
   // getAllTasks(): Task[] {
   //   return this.tasks
   // }
