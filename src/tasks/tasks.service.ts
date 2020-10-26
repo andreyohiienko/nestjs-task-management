@@ -12,7 +12,9 @@ export class TasksService {
     @InjectRepository(TaskRepository) private TaskRepository: TaskRepository,
   ) {}
 
-  getTasks(filterDto: GetTasksFilterDto) {}
+  getTasks(filterDto: GetTasksFilterDto): Promise<Task[]> {
+    return this.TaskRepository.getTasks(filterDto)
+  }
 
   // getAllTasks(): Task[] {
   //   return this.tasks
