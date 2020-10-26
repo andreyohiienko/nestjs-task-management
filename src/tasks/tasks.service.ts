@@ -59,11 +59,13 @@ export class TasksService {
   //   return id
   // }
 
-  // deleteTask(id: string): string {
-  //   this.getTaskById(id) // checks existing of task
-  //   this.tasks = this.tasks.filter((task) => task.id !== id)
-  //   return id
-  // }
+  async updateTaskStatus(id: number, status: TaskStatus): Promise<Task> {
+    const task = await this.getTaskById(id)
+    task.status = status
+    await task.save()
+    return task
+  }
+
   // updateTaskStatus(id: string, status: TaskStatus): Task {
   //   const task = this.getTaskById(id)
   //   task.status = status
