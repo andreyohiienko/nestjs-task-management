@@ -47,3 +47,4 @@ $ npm run test:cov
 - class-validator
 - class-transformer
 - PostgreSQL
+- TypeORM
