@@ -46,3 +46,4 @@ $ npm run test:cov
 ### Important takeaways
 - class-validator
 - class-transformer
+- PostgreSQL
