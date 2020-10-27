@@ -4,13 +4,14 @@ import { PassportModule } from '@nestjs/passport'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { AuthController } from './auth.controller'
 import { AuthService } from './auth.service'
+import { JwtStrategy } from './jwt.strategy'
 import { UserRepository } from './user.repositoty'
 
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: 'topSecret51', // should not be visible on git
+      secret: 'topSecret51', // ToDo: should not be visible on git
       signOptions: {
         expiresIn: 3600,
       },
@@ -18,6 +19,7 @@ import { UserRepository } from './user.repositoty'
     TypeOrmModule.forFeature([UserRepository]),
   ],
   controllers: [AuthController],
-  providers: [AuthService],
+  providers: [AuthService, JwtStrategy],
+  exports: [JwtStrategy, PassportModule],
 })
 export class AuthModule {}

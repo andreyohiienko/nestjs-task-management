@@ -48,6 +48,7 @@ $ npm run test:cov
 - class-transformer
 - PostgreSQL
 - TypeORM
+- [JWT](https://jwt.io/)
 
 ### Nest Commands
 - nest g module \<name\>
