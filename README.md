@@ -49,6 +49,7 @@ $ npm run test:cov
 - PostgreSQL
 - TypeORM
 - [JWT](https://jwt.io/)
+- [Sometimes requires dist remove](https://github.com/typeorm/typeorm/issues/4498)
 
 ### Nest Commands
 - nest g module \<name\>
