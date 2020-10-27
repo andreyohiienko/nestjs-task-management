@@ -51,8 +51,8 @@ export class TasksService {
     return this.TaskRepository.createTask(createTaskDto, user)
   }
 
-  async deleteTask(id: number): Promise<number> {
-    const result = await this.TaskRepository.delete(id) // delete() is better for performance
+  async deleteTask(id: number, user: User): Promise<number> {
+    const result = await this.TaskRepository.delete({ id, userId: user.id }) // delete() is better for performance
     if (result.affected === 0) {
       throw new NotFoundException(`Task with ID "${id}" not found`)
     }
