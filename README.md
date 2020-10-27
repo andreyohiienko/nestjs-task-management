@@ -50,6 +50,7 @@ $ npm run test:cov
 - TypeORM
 - [JWT](https://jwt.io/)
 - [Sometimes requires dist remove](https://github.com/typeorm/typeorm/issues/4498)
+- execution path ```controller -> service -> repository```
 
 ### Nest Commands
 - nest g module \<name\>
