@@ -5,6 +5,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt'
 import { JwtPayload } from './jwt-payload.interface'
 import { User } from './user.entity'
 import { UserRepository } from './user.repositoty'
+import * as config from 'config'
 
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
@@ -14,7 +15,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       // calls the constructor of base Class (PassportStrategy)
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'topSecret51', // ToDo: should not be visible on git
+      secretOrKey: process.env.JWT_SECRET || config.get('jwt.secret'), // ToDo: should not be visible on git
     })
   }
 
