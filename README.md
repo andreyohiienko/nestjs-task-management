@@ -44,13 +44,15 @@ $ npm run test:cov
 ```
 
 ### Important takeaways
+- DTO - data transfer object
 - class-validator
 - class-transformer
 - PostgreSQL
-- TypeORM
+- [TypeORM](https://typeorm.io/)
 - [JWT](https://jwt.io/)
 - [Sometimes requires dist remove](https://github.com/typeorm/typeorm/issues/4498)
 - execution path ```controller -> service -> repository```
+- [https://docs.nestjs.com/techniques/logger](https://docs.nestjs.com/techniques/logger)
 
 ### Nest Commands
 - nest g module \<name\>
