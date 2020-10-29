@@ -53,6 +53,7 @@ $ npm run test:cov
 - [Sometimes requires dist remove](https://github.com/typeorm/typeorm/issues/4498)
 - execution path ```controller -> service -> repository```
 - [https://docs.nestjs.com/techniques/logger](https://docs.nestjs.com/techniques/logger)
+- set ```TYPEORM_SYNC: true``` on elastic beastalk initialization
 
 ### Nest Commands
 - nest g module \<name\>
