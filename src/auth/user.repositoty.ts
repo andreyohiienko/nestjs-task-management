@@ -9,7 +9,7 @@ export class UserRepository extends Repository<User> {
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { username, password } = authCredentialsDto
 
-    const user = new User() // entity
+    const user = this.create() // entity
     user.username = username
     user.salt = await bcrypt.genSalt()
     user.password = await this.hashPassword(password, user.salt)
@@ -19,10 +19,8 @@ export class UserRepository extends Repository<User> {
     } catch (error) {
       if (error.code === '23505') {
         // duplicate username
-        console.log('error', error)
         throw new ConflictException('Username already exists')
       } else {
-        console.log('error', error)
         throw new InternalServerErrorException()
       }
     }

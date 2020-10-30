@@ -31,7 +31,7 @@ describe('TasksService', () => {
   })
 
   describe('getTasks', () => {
-    it('should gets all tasks from the repository', async () => {
+    it('should get all tasks from the repository', async () => {
       taskRepository.getTasks.mockResolvedValue('someValue')
       expect(taskRepository.getTasks).not.toHaveBeenCalled()
 
@@ -63,7 +63,7 @@ describe('TasksService', () => {
       })
     })
 
-    it('should throws an error as task is not found', () => {
+    it('should throw an error as task is not found', () => {
       taskRepository.findOne.mockResolvedValue(null)
       expect(tasksService.getTaskById(1, mockUser)).rejects.toThrow(
         NotFoundException,
@@ -71,7 +71,7 @@ describe('TasksService', () => {
     })
   })
   describe('createTask', () => {
-    it('should calls taskRepositoty.create() and returns the result', async () => {
+    it('should call taskRepositoty.create() and returns the result', async () => {
       taskRepository.createTask.mockResolvedValue('someTask')
       expect(taskRepository.createTask).not.toHaveBeenCalled()
       const createTaskDto = {
@@ -88,7 +88,7 @@ describe('TasksService', () => {
   })
 
   describe('deleteTask', () => {
-    it('should calls taskRepositoty.deleteTask() to delete a task', async () => {
+    it('should call taskRepositoty.deleteTask() to delete a task', async () => {
       taskRepository.delete.mockResolvedValue({ affected: 1 })
       expect(taskRepository.delete).not.toHaveBeenCalled()
       await tasksService.deleteTask(1, mockUser)
